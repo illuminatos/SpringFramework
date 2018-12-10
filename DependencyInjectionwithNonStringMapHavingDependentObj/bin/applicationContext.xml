@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+<bean id="userbean1" class="User">
+	<property name="id" value="1"></property>
+	<property name="name" value="Aydın"></property>
+	<property name="e_mail" value="atasoyan@gmail.com"></property>
+</bean>
+
+<bean id="userbean2" class="User">
+	<property name="id" value="2"></property>
+	<property name="name" value="James"></property>
+	<property name="e_mail" value="james@gmail.com"></property>
+</bean>
+
+<bean id="answerbean1" class="Answer">
+	<property name="id" value="1"></property>
+	<property name="answer" value="Java is a PL"></property>
+	<property name="date" value="12/12/2018"></property>
+</bean>
+
+<bean id="answerbean2" class="Answer">
+	<property name="id" value="2"></property>
+	<property name="answer" value="Java is a platform"></property>
+	<property name="date" value="11/05/2018"></property>
+</bean>
+
+<bean id="questionbean" class="Question">
+	<property name="id" value="1"></property>
+	<property name="question" value="What's Java?"></property>
+	<property name="answers">
+		<map>
+			<entry key-ref="userbean1" value-ref="answerbean1"/>
+			<entry key-ref="userbean2" value-ref="answerbean2"/>
+		</map>
+	</property>
+</bean>
+
+</beans>
