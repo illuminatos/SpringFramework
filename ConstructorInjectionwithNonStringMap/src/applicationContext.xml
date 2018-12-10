@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+
+<bean id="answerbean1" class="Answer">
+	<constructor-arg value="1" type="int"></constructor-arg>
+	<constructor-arg value="Java is a PL"></constructor-arg>
+	<constructor-arg value="12/12/2018"></constructor-arg>
+</bean>
+
+<bean id="answerbean2" class="Answer">
+	<constructor-arg value="2" type="int"></constructor-arg>
+	<constructor-arg value="Java is a platform"></constructor-arg>
+	<constructor-arg value="14/11/2018"></constructor-arg> 
+</bean>
+
+<bean id="userbean1" class="User">
+	<constructor-arg value="1" type="int"></constructor-arg>
+	<constructor-arg value="Aydın"></constructor-arg>
+	<constructor-arg value="atasoyan@gmail.com"></constructor-arg>
+</bean>
+
+<bean id="userbean2" class="User">
+	<constructor-arg value="2" type="int"></constructor-arg>
+	<constructor-arg value="Esra"></constructor-arg>
+	<constructor-arg value="esrakartal@gmail.com"></constructor-arg>
+</bean>
+
+<bean id="questionbean" class="Question">
+	<constructor-arg value="1" type="int"></constructor-arg>
+	<constructor-arg value="What's java?"></constructor-arg>
+	<constructor-arg>
+		<map>
+			<entry key-ref="userbean1" value-ref="answerbean1"></entry>
+			<entry key-ref="userbean2" value-ref="answerbean2"></entry>
+		</map>
+	</constructor-arg>
+</bean>
+
+</beans>
